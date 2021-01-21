@@ -34,3 +34,6 @@ Route::get('/dashboard', function(){
 Route::resource('rubros', RubroController::class);
 Route::resource('categorias', \App\Http\Controllers\CategoriaController::class);
 Route::resource('estados', \App\Http\Controllers\EstadoController::class);
+Route::resource('usuarios',\App\Http\Controllers\UsuarioController::class);
+route::get('/usuarios/{id}/habilitar_usuario', [\App\Http\Controllers\UsuarioController::class,'habilitar'])->name('usuarios.habilitar');
+route::get('/usuarios/{id}/deshabilitar_usuario', [\App\Http\Controllers\UsuarioController::class,'deshabilitar'])->name('usuarios.deshabilitar');

@@ -27,13 +27,18 @@
                         {{__('Categorias')}}
                     </x-jet-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                    <x-jet-nav-link href="{{route('estados.index')}}" :active="request()->routeIs('categorias.index')">
+                        {{__('Estados')}}
+                    </x-jet-nav-link>
+                </div>
                 <!-- Dropdown activos fijos-->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" >
                     <x-jet-dropdown align="right" width="40">
                         <x-slot name="trigger">
                             <div class="">
                                 <x-jet-nav-link href="#" >
-                                    {{__('Rubros')}}
+                                    {{__('Activos fijos')}}
                                 </x-jet-nav-link>
                             </div>
                         </x-slot>
@@ -143,11 +148,15 @@
                         <x-slot name="content">
                             <!-- Account Management -->
                             <div class="block px-4 py-2 text-xs text-gray-400">
-                                {{ __('Manage Account') }}
+                                {{ __('Gestionar cuenta') }}
                             </div>
 
                             <x-jet-dropdown-link href="{{ route('profile.show') }}">
-                                {{ __('Profile') }}
+                                {{ __('Perfil') }}
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{ route('usuarios.index') }}">
+                                {{ __('Gestionar todos los usuarios') }}
                             </x-jet-dropdown-link>
 
                             @if (Laravel\Jetstream\Jetstream::hasApiFeatures())
@@ -165,7 +174,7 @@
                                 <x-jet-dropdown-link href="{{ route('logout') }}"
                                          onclick="event.preventDefault();
                                                 this.closest('form').submit();">
-                                    {{ __('Logout') }}
+                                    {{ __('Cerrar sesion') }}
                                 </x-jet-dropdown-link>
                             </form>
                         </x-slot>
@@ -201,6 +210,11 @@
         <div class="pt-2 pb-3 space-y-1">
             <x-jet-responsive-nav-link href="{{route('categorias.index')}}" :active="request()->routeIs('categorias.index')">
                 {{ __('Categorias') }}
+            </x-jet-responsive-nav-link>
+        </div>
+        <div class="pt-2 pb-3 space-y-1">
+            <x-jet-responsive-nav-link href="{{route('estados.index')}}" :active="request()->routeIs('categorias.index')">
+                {{ __('Estados') }}
             </x-jet-responsive-nav-link>
         </div>
 
