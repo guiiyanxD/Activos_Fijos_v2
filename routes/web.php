@@ -33,3 +33,4 @@ Route::get('/dashboard', function(){
 
 Route::resource('rubros', RubroController::class);
 Route::resource('categorias', \App\Http\Controllers\CategoriaController::class);
+Route::resource('estados', \App\Http\Controllers\EstadoController::class);
