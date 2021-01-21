@@ -28,7 +28,7 @@
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{route('estados.index')}}" :active="request()->routeIs('categorias.index')">
+                    <x-jet-nav-link href="{{route('estados.index')}}" :active="request()->routeIs('estados.index')">
                         {{__('Estados')}}
                     </x-jet-nav-link>
                 </div>
