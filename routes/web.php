@@ -37,3 +37,4 @@ Route::resource('estados', \App\Http\Controllers\EstadoController::class);
 Route::resource('usuarios',\App\Http\Controllers\UsuarioController::class);
 route::get('/usuarios/{id}/habilitar_usuario', [\App\Http\Controllers\UsuarioController::class,'habilitar'])->name('usuarios.habilitar');
 route::get('/usuarios/{id}/deshabilitar_usuario', [\App\Http\Controllers\UsuarioController::class,'deshabilitar'])->name('usuarios.deshabilitar');
+route::resource('proveedores', \App\Http\Controllers\ProveedorController::class);

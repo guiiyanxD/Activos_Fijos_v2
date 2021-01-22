@@ -20,7 +20,7 @@ class CreateCategoriasTable extends Migration
             $table->string('categoria');
             $table->unsignedBigInteger('rubro_id');
 
-            $table->foreign('rubro_id')->references('id_rubro')->on('rubros')->onDelete('cascade');
+            $table->foreign('rubro_id')->references('id_rubro')->on('rubros')->onDelete('cascade')->cascadeOnUpdate();
         });
     }
 

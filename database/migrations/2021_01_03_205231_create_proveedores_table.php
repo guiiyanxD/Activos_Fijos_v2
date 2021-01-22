@@ -19,8 +19,8 @@ class CreateProveedoresTable extends Migration
             $table->unsignedBigInteger('contacto_id');
             $table->unsignedBigInteger('estado_id');
 
-            $table->foreign('contacto_id')->references('id_contacto')->on('contactos')->onDelete('cascade');
-            $table->foreign('estado_id')->references('id_estado')->on('estados')->onDelete('cascade');
+            $table->foreign('contacto_id')->references('id_contacto')->on('contactos')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('estado_id')->references('id_estado')->on('estados')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }
