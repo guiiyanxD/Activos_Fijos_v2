@@ -40,8 +40,10 @@ class CategoriaController extends Controller
     {
         $cat = new Categoria();
         $cat->nombre = $request->input('nombre');
-        $cat->categoria = $request->input('descripcion');
+        $cat->descripcion = $request->input('descripcion');
         $cat->rubro_id = $request->input('rubro_id');
+        $cat->vida_util = $request->input('vida_util');
+        $cat->coeficiente_depr = $request->input('coeficiente');
         $cat->save();
         return redirect()->route('categorias.index');
     }
@@ -80,8 +82,10 @@ class CategoriaController extends Controller
     {
         $cat = Categoria::findOrFail($id);
         $cat->nombre = $request->input('nombre');
-        $cat->categoria = $request->input('descripcion');
+        $cat->descripcion = $request->input('descripcion');
         $cat->rubro_id = $request->input('rubro_id');
+        $cat->vida_util = $request->input('vida_util');
+        $cat->coeficiente_depr = $request->input('coeficiente');
         $cat->save();
         return redirect()->route('categorias.index');
     }

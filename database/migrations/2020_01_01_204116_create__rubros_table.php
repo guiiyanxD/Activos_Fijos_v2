@@ -18,8 +18,7 @@ class CreateRubrosTable extends Migration
             $table->timestamps();
             $table->string('nombre');
             $table->string('descripcion');
-            $table->unsignedBigInteger('vida_util');
-            $table->unsignedBigInteger('coeficiente');
+            // TODO: revisar las clases Rubros y Categorias para definir en que clase van los atributos depreciar y actualiza
             $table->unsignedBigInteger('depreciar');
             $table->unsignedBigInteger('actualiza');
         });

@@ -31,7 +31,7 @@
             @foreach($categoria as $cat)
                 <tr>
                     <td>{{$cat->nombre}}</td>
-                    <td>{{$cat->categoria}}</td>
+                    <td>{{$cat->descripcion}}</td>
                     <td colspan="2">&nbsp</td>
                     <td>{{$cat->rubro->nombre}}</td>
                     <td>

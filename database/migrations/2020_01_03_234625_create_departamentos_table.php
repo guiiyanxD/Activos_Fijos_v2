@@ -18,9 +18,7 @@ class CreateDepartamentosTable extends Migration
             $table->string('nombre');
             $table->string('descripcion');
             $table->unsignedBigInteger('edificio_id');
-            $table->unsignedBigInteger('user_id');
 
-            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreign('edificio_id')->references('id_edificio')->on('edificios')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });

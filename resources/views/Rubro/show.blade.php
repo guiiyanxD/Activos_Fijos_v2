@@ -32,19 +32,6 @@
                         </div>
 
                         <div class="col-span-6 sm:col-span-4">
-                            <div class="flex flex-col mb-4 md:w-1/2">
-                                <x-jet-label for="vida_util" value="{{ __('Vida util') }}" />
-                                <input value="{{$rubro->vida_util}}" type="text" id="input" name="vida_util" class="form-control" disabled="" autocomplete="vida_util" required>
-                                <x-jet-input-error for="vida_util" class="mt-2" />
-
-                            </div>
-
-                            <div  class="flex flex-col mb-4 md:w-1/2">
-                                <x-jet-label for="coeficiente" value="{{ __('Coeficiente') }}" />
-                                <input value="{{$rubro->coeficiente}}" type="text" id="input" name="coeficiente" class="form-control" disabled="" autocomplete="coeficiente" required>
-                                <x-jet-input-error for="coeficiente" class="mt-2" />
-                            </div>
-
 
                             <div class="flex flex-col mb-4 md:w-1/2">
                                 <x-jet-label for="dpreciar" value="{{ __('Depreciar') }}" />

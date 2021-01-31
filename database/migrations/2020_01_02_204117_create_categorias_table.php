@@ -17,7 +17,10 @@ class CreateCategoriasTable extends Migration
             $table->id('id_categoria');
             $table->timestamps();
             $table->string('nombre');
-            $table->string('categoria');
+            $table->string('descripcion');
+            // TODO: revisar las clases Rubros y Categorias para definir en que clase van los atributos depreciar y actualiza
+            $table->unsignedBigInteger('vida_util');
+            $table->unsignedBigInteger('coeficiente_depr');
             $table->unsignedBigInteger('rubro_id');
 
             $table->foreign('rubro_id')->references('id_rubro')->on('rubros')->onDelete('cascade')->cascadeOnUpdate();

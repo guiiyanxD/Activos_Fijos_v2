@@ -39,8 +39,6 @@ class RubroController extends Controller
         $rubro = new Rubro();
         $rubro->nombre = $request->input('nombre');
         $rubro->descripcion = $request->input('descripcion');
-        $rubro->vida_util = $request->input('vida_util');
-        $rubro->coeficiente = $request->input('coeficiente');
         $rubro->depreciar = $request->input('depreciar');
         $rubro->actualiza = $request->input('actualiza');
         $rubro->save();
@@ -84,8 +82,6 @@ class RubroController extends Controller
         $rubro = Rubro::findOrFail($id);
         $rubro->nombre = $request->input('nombre');
         $rubro->descripcion = $request->input('descripcion');
-        $rubro->vida_util = $request->input('vida_util');
-        $rubro->coeficiente = $request->input('coeficiente');
         $rubro->depreciar = $request->input('depreciar');
         $rubro->actualiza = $request->input('actualiza');
         $rubro->save();

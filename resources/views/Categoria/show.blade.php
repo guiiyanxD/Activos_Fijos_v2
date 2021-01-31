@@ -27,7 +27,7 @@
 
                         <div class="col-span-6 sm:col-span-4">
                             <x-jet-label for="descripcion" value="{{ __('Descripcion de la categoria') }}" />
-                            <input value="{{$cat->categoria}}" type="text" id="input" name="descripcion" class="form-control" disabled="" autocomplete="descripcion" required>
+                            <input value="{{$cat->descripcion}}" type="text" id="input" name="descripcion" class="form-control" disabled="" autocomplete="descripcion" required>
                             <x-jet-input-error for="descripcion" class="mt-2" />
                         </div>
 
@@ -37,6 +37,18 @@
                                 <input value="{{$cat->rubro->nombre}}" type="text" id="input" name="rubro_id" class="form-control" disabled="" autocomplete="vida_util" required>
                                 <x-jet-input-error for="rubro_id" class="mt-2" />
 
+                            </div>
+                            <div class="flex flex-col mb-4 md:w-1/2">
+                                <x-jet-label for="vida_util" value="{{ __('Vida util') }}" />
+                                <input value="{{$cat->vida_util}}" type="text" id="input" name="vida_util" class="form-control" disabled="" autocomplete="vida_util" required>
+                                <x-jet-input-error for="vida_util" class="mt-2" />
+
+                            </div>
+
+                            <div  class="flex flex-col mb-4 md:w-1/2">
+                                <x-jet-label for="coeficiente" value="{{ __('Coeficiente') }}" />
+                                <input value="{{$cat->coeficiente_depr}}" type="text" id="input" name="coeficiente" class="form-control" disabled="" autocomplete="coeficiente" required>
+                                <x-jet-input-error for="coeficiente" class="mt-2" />
                             </div>
                         </div>
 

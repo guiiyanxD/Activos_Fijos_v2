@@ -11,19 +11,15 @@ class Departamento extends Model
     protected $table = 'departamentos';
     protected $primaryKey = 'id_departamento';
     protected $fillable = [
-        'nombre','descripcion','ubicacion_id','user_id', 'estado',
+        'nombre','descripcion','edificio_id',
     ];
 
     public function activo(){
         return $this->hasMany(Activo_Fijo::class,'departamento_id');
     }
 
-    public function ubicacion(){
-        return $this->belongsTo(Ubicacion::class,'ubicacion_id');
-    }
-
-    public function user(){
-        return $this->belongsTo(User::class,'user_id');
+    public function edificio(){
+        return $this->belongsTo(Edificio::class,'edificio_id');
     }
 
     public function solicitud_movimiento(){
