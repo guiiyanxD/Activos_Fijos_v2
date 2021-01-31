@@ -15,7 +15,7 @@ class CreateSolicitudesMovimientosTable extends Migration
     {
         Schema::create('solicitudes_movimientos', function (Blueprint $table) {
             $table->id('id_sol_mov'); //NroMovimiento
-            $table->unsignedBigInteger('solicitud_id'); //departamento->id_departamento
+            $table->unsignedBigInteger('solicitud_id');
             $table->unsignedBigInteger('destino_dpto'); //departamento->id_departamento
             $table->unsignedBigInteger('origen_dpto'); //activofijo->departamento_id
             $table->unsignedBigInteger('af_id'); //activofijo

@@ -14,8 +14,8 @@ class Proveedor extends Model
         'nombre','contacto_id','estado_id',
     ];
 
-    public function adquisicion(){
-        return $this->hasMany(Adquisicion::class,'proveedor_id');
+    public function solicitud_compra(){
+        return $this->hasMany(Solicitud_Compra::class,'proveedor_id');
     }
 
     public function estado(){

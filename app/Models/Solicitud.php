@@ -18,12 +18,15 @@ class Solicitud extends Model
         return $this->hasMany(Activo_Fijo::class,'solicitud_id');
     }
 
-    public function det_solicitud(){
-        return $this->hasMany(Detalle_Solicitud::class,'solicitud_id');
-    }
-
     public function user(){
         return $this->belongsTo(User::class,'user_id');
+    }
+
+    public function Solicitud_movimiento(){
+        return $this->hasOne(Solicitud_Movimiento::class,'solicitud_id');
+    }
+    public function Solicitud_compra(){
+        return $this->hasOne(Solicitud_Compra::class,'solicitud_id');
     }
 
 }

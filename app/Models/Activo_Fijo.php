@@ -26,16 +26,12 @@ class Activo_Fijo extends Model
         return $this->belongsTo(Departamento::class,'departamento_id');
     }
 
-    public function solicitud(){
-        return $this->belongsTo(Solicitud::class,'solicitud_id');
+    public function solicitud_movimiento(){
+        return $this->hasMany(Solicitud_Movimiento::class,'af_id');
     }
 
     public function almacen(){
         return $this->belongsTo(Almacen::class, 'almacen_id');
-    }
-
-    public function movimiento(){
-        return $this->belongsTo(Movimiento::class, 'movimiento_id');
     }
 
     public function codificacion(){

@@ -24,8 +24,8 @@ class Categoria extends Model
         return $this->belongsTo(Rubro::class,'rubro_id');
     }
 
-    public function det_adquisicion(){
-        return $this->hasOne(Detalle_Adquisicion::class,'categoria_id');
+    public function detalle_compra(){
+        return $this->hasMany(Detalle_Compra::class,'categoria_id');
     }
 
     public function det_solicitud(){

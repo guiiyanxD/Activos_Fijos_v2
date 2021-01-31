@@ -26,7 +26,8 @@ class Departamento extends Model
         return $this->belongsTo(User::class,'user_id');
     }
 
-    public function movimiento(){
-        return $this->hasMany(Movimiento::class,'departamento_id');
+    public function solicitud_movimiento(){
+        return $this->hasMany(Solicitud_Movimiento::class,'destino_dpto');
     }
+
 }
