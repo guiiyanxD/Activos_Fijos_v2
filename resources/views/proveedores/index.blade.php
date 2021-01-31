@@ -14,19 +14,7 @@
             ease-in-out duration-150">
                 {{__('Agregar proveedor')}}
             </a>
-            <li class="divider" style="margin: 10px"></li>
-            <div>
-                <select class="form-select" name="select" id="select">
-                    <option value="selected">Elija una opcion</option>
-                    <option class="dropdown-item" value="hola">hola</option>
-                    <option class="dropdown-item" value="hola">como</option>
-                    <option class="dropdown-item" value="hola">estas</option>
-                    <option class="dropdown-item" value="hola">hoy</option>
-                </select>
-            </div>
-            <li class="divider" style="margin: 10px"></li>
 
-            <label for="select">Aqui deberia haber un select</label>
         </div>
         <table class="table">
             <thead>

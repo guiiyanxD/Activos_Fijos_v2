@@ -14,10 +14,10 @@ class RubroController extends Controller
      */
     public function index()
     {
-        $rubro = Rubro::all()->sortBy("nombre");
+        //$rubro = Rubro::orderBy('id_rubro','ASC')->paginate(10);
+        $rubro = Rubro::all()->sortBy('id_rubro');
         return view('Rubro.index',['rubro'=>$rubro]);
     }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -89,7 +89,7 @@ class RubroController extends Controller
         $rubro->depreciar = $request->input('depreciar');
         $rubro->actualiza = $request->input('actualiza');
         $rubro->save();
-        return redirect()->route('rubros.index');
+        return redirect()->route('rubros.index')->with('Exito', 'Rubro actualizado con exito.');
     }
 
     /**

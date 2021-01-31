@@ -12,7 +12,7 @@
                 {{ __('Agregar nuevo proveedor') }}
             </x-slot>
             <x-slot name="description">
-                {{ __('Formulario para agregar un nuevo proveedor a la lista de la empresa.)}}
+                {{ __('Formulario para agregar un nuevo proveedor a la lista de la empresa.')}}
             </x-slot>
         </x-jet-section-title>
         <form action="{{route('proveedores.store')}}" method="POST" class="mt-4 md:mt-0 md:col-span-2">
@@ -29,9 +29,28 @@
                         </div>
 
                         <div class="col-span-6 sm:col-span-4">
-                            <x-jet-label for="estado_id" value="{{ __('estado') }}" />
-                            <x-jet-input id="estado_id" name="estado_id" type="text" class="mt-1 block w-full"  autocomplete="estado_id" required />
+                            <x-jet-label for="estado_id" value="{{ __('Estado') }}" />
+                            <x-jet-input id="estado_id" name="estado_id" type="number" class="mt-1 block w-full"  autocomplete="estado_id" required />
                             <x-jet-input-error for="estado_id" class="mt-2" />
+                        </div>
+
+
+                        <div>
+                            <select name="" id="">
+                                <option value="" selected>hola</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="col-span-6 sm:col-span-4">
+                            <x-jet-label for="estado_id" value="{{ __('Estado, aqui deberia haber un select') }}" />
+                            <select name="" id="" class="form-select">
+                                <option value="selected" class="dropdown-item"> -- Elija el estado -- </option>
+                                @foreach($estados as $estado)
+                                    <option value="{{ $estado->id }}">{{$estado->nombre}}</option>
+                                @endforeach
+                            </select>
                         </div>
 
                     <!-- TODO: Seria bueno agregar un boton ' agregar contacto' que al presionarlo se desplegue un formulario en el que se pueda añadir los datos de contacto.-->

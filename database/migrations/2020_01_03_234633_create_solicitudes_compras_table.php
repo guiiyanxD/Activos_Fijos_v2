@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateAdquisicionesTable extends Migration
+class CreateSolicitudesComprasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,16 +13,12 @@ class CreateAdquisicionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('adquisiciones', function (Blueprint $table) {
-            $table->id('id_adquisicion');
-            $table->date('fecha');
-            $table->unsignedBigInteger('almacen_id');
+        Schema::create('solicitudes_compras', function (Blueprint $table) {
+            $table->id('id_sol_compra');
             $table->unsignedBigInteger('proveedor_id');
-            $table->unsignedBigInteger('user_id');
+            $table->string('nombre'); //nombre del activo que se desa comprar
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->foreign('proveedor_id')->references('id_proveedor')->on('proveedores')->onDelete('cascade');
-            $table->foreign('almacen_id')->references('id_almacen')->on('almacenes')->onDelete('cascade');
             $table->timestamps();
 
         });

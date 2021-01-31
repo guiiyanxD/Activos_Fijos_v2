@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateDetallesDeAdquisicionesTable extends Migration
+class CreateDetallesDeComprasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,16 @@ class CreateDetallesDeAdquisicionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalles_de_adquisiciones', function (Blueprint $table) {
-            $table->id('id_det_adquisicion');
-            $table->unsignedBigInteger('adquisicion_id');
+        Schema::create('detalles_de_compras', function (Blueprint $table) {
+            $table->id('id_det_compra');
+            $table->unsignedBigInteger('sol_compra_id');
             $table->unsignedBigInteger('categoria_id');
-            $table->string('nombre');
+            $table->string('detalle');
+            $table->unsignedBigInteger('cantidad');
+            $table->unsignedFloat('costo');
 
             $table->foreign('categoria_id')->references('id_categoria')->on('categorias');
-            $table->foreign('adquisicion_id')->references('id_adquisicion')->on('adquisiciones');
+            $table->foreign('sol_compra_id')->references('id_sol_compra')->on('solicitudes_compras');
             $table->timestamps();
 
         });

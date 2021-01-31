@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Estado;
 use App\Models\Proveedor;
+use App\Models\Rubro;
 use Illuminate\Http\Request;
 
 class ProveedorController extends Controller
@@ -25,7 +27,9 @@ class ProveedorController extends Controller
      */
     public function create()
     {
-        return view('proveedores.create');
+        $estados = Estado::all();
+        $rubros = Rubro::all();
+        return view('proveedores.create',['estados'=>$estados, 'rubros'=>$rubros]);
     }
 
     /**

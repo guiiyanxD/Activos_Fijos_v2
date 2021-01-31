@@ -15,10 +15,14 @@ class CreateSolicitudesTable extends Migration
     {
         Schema::create('solicitudes', function (Blueprint $table) {
             $table->id('id_solicitud');
-            $table->dateTime('Fecha');
+            $table->dateTime('fecha');
             $table->unsignedBigInteger('user_id');
+         //   $table->foreignId('sol_compra_id');
+       //     $table->foreignId('sol_mov_id');
 
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+   //         $table->foreign('sol_compra_id')->references('id_sol_compra')->on('solicitudes_compras')->cascadeOnDelete()->cascadeOnUpdate();
+     //       $table->foreign('sol_mov_id')->references('id_sol_mov')->on('solicitudes_movimientos')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
 
             $table->timestamps();
         });

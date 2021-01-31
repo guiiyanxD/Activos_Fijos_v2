@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateUbicacionesTable extends Migration
+class CreateEdificiosTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,14 @@ class CreateUbicacionesTable extends Migration
      */
     public function up()
     {
-        Schema::create('ubicaciones', function (Blueprint $table) {
-            $table->id('id_ubicacion');
-            $table->string('edificio');
-            $table->string('ciudad');
-            $table->string('pais');
-            $table->string('estado'); // hace referencia al estado (municipio) de la ciudad. Sus coordenadas.
+        Schema::create('edificios', function (Blueprint $table) {
+            $table->id('id_edificio');
+            $table->string('direccion');
+            $table->string('nombre');
+            $table->unsignedBigInteger('ciudad_id');
             $table->timestamps();
+
+            $table->foreign('ciudad_id')->references('id_ciudad')->on('ciudades')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 

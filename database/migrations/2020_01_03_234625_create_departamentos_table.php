@@ -17,13 +17,11 @@ class CreateDepartamentosTable extends Migration
             $table->id('id_departamento');
             $table->string('nombre');
             $table->string('descripcion');
-            $table->unsignedBigInteger('ubicacion_id');
+            $table->unsignedBigInteger('edificio_id');
             $table->unsignedBigInteger('user_id');
-            $table->string('estado')->nullable(); // interrogado
 
-
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
-            $table->foreign('ubicacion_id')->references('id_ubicacion')->on('ubicaciones')->onDelete('cascade');
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('edificio_id')->references('id_edificio')->on('edificios')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
         });
     }

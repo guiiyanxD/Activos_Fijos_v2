@@ -21,17 +21,13 @@ class CreateActivosFijosTable extends Migration
             $table->unsignedBigInteger('estado_id');
             $table->unsignedBigInteger('categoria_id');
             $table->unsignedBigInteger('departamento_id');
-            $table->unsignedBigInteger('solicitud_id');
             $table->unsignedBigInteger('almacen_id');
-            $table->unsignedBigInteger('movimiento_id');
             $table->timestamps();
 
-            $table->foreign('movimiento_id')->references('id_movimiento')->on('movimientos')->onDelete('cascade');
-            $table->foreign('almacen_id')->references('id_almacen')->on('almacenes')->onDelete('cascade');
-            $table->foreign('solicitud_id')->references('id_solicitud')->on('solicitudes')->onDelete('cascade');
-            $table->foreign('departamento_id')->references('id_departamento')->on('departamentos')->onDelete('cascade');
-            $table->foreign('categoria_id')->references('id_categoria')->on('categorias')->onDelete('cascade');
-            $table->foreign('estado_id')->references('id_estado')->on('estados')->onDelete('cascade');
+            $table->foreign('almacen_id')->references('id_almacen')->on('almacenes')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('departamento_id')->references('id_departamento')->on('departamentos')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('categoria_id')->references('id_categoria')->on('categorias')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('estado_id')->references('id_estado')->on('estados')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 
