@@ -19,7 +19,7 @@ class Contacto extends Model
     ];
 //TODO: relacion entre usuario y contacto esta al reves. corregir.
     public function User(){
-        return $this->belongsTo(User::class, 'user_id');
+        return $this->hasOne(User::class, 'contacto_id');
     }
 
     public function proveedor(){

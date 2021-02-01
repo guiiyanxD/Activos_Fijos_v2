@@ -38,3 +38,11 @@ Route::resource('usuarios',\App\Http\Controllers\UsuarioController::class);
 route::get('/usuarios/{id}/habilitar_usuario', [\App\Http\Controllers\UsuarioController::class,'habilitar'])->name('usuarios.habilitar');
 route::get('/usuarios/{id}/deshabilitar_usuario', [\App\Http\Controllers\UsuarioController::class,'deshabilitar'])->name('usuarios.deshabilitar');
 route::resource('proveedores', \App\Http\Controllers\ProveedorController::class);
+
+route::get('prueba/proveedor&contacto',function (){
+    $proveedor = \App\Models\Proveedor::with('contacto')->get();
+    $proveedor_direccion = $proveedor->contacto->direccion;
+    return ['relacion_proveedor_contacto'=> $proveedor,'proveedor_direccion'=>$proveedor_direccion];
+})->name('prueba/proveedor');
+
+//route::delete('/prueba/{id}/destroy/proveedores/',[\App\Http\Controllers\ProveedorController::class,'prueba'])->name('proveedores.prueba');

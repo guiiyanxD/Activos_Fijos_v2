@@ -16,11 +16,12 @@ class CreateProveedoresTable extends Migration
         Schema::create('proveedores', function (Blueprint $table) {
             $table->id('id_proveedor');
             $table->string('nombre');
-            $table->unsignedBigInteger('contacto_id');
             $table->unsignedBigInteger('estado_id');
+            $table->unsignedBigInteger('contacto_id')->nullable();
 
-            $table->foreign('contacto_id')->references('id_contacto')->on('contactos')->cascadeOnDelete()->cascadeOnUpdate();
+
             $table->foreign('estado_id')->references('id_estado')->on('estados')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('contacto_id')->references('id_contacto')->on('contactos')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
         });
     }

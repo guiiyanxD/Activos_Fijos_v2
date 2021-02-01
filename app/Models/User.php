@@ -61,7 +61,7 @@ class User extends Authenticatable
     ];
 
     public function contacto(){
-        return $this->hasOne(Contacto::class,'user_id');
+        return $this->belongsTo(Contacto::class,'contacto_id');
     }
 
     public function rol(){

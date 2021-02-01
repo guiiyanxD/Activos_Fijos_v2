@@ -18,11 +18,8 @@ class CreateContactosTable extends Migration
             $table->string('direccion')->nullable();
             $table->integer('celular')->nullable();
             $table->integer('telefono')->nullable();
-            $table->string('email_personal');
-            $table->unsignedBigInteger('usuario_id');
+            $table->string('email_personal')->nullable();
             $table->timestamps();
-
-            $table->foreign('usuario_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 
