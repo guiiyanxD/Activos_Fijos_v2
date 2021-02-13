@@ -8,10 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Solicitud_Compra extends Model
 {
     use HasFactory;
-    protected $table = 'solicitudes_compra';
+    protected $table = 'solicitudes_compras';
     protected $primaryKey='id_sol_compra';
     protected $fillable = [
-        'nombre','proveedor_id','solicitud',
+        'nombre','proveedor_id','solicitud_id',
     ];
 
     public function solicitud(){

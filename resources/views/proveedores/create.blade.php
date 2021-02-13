@@ -6,7 +6,7 @@
         </h2>
     </x-slot>
 
-    <div class="max-w-7xl mx-auto py-10 sm:px-10 lg:px-10 md:grid md:grid-cols-3 md:gap-6 ">
+    <div class="max-w-7xl mx-auto py-10 sm:px-10 lg:px-10 md:grid md:grid-cols-3 md:gap-6">
         <x-jet-section-title>
             <x-slot name="title">
                 {{ __('Agregar nuevo proveedor') }}
@@ -28,23 +28,21 @@
                             <x-jet-input-error for="nombre" class="mt-2" />
                         </div>
 
-                        <div class="col-span-6 sm:col-span-4">
+                        <div class="col-span-8 sm:col-span-4">
                             <x-select-box>
                                 <x-slot name="label">
-                                    Escoja una opcion</label>
+                                    escoja la opcion con componentes
                                 </x-slot>
-
                                 <x-slot name="main">
                                     @foreach($estados as $stat)
-                                        <div class="option">
-                                            <input type="text" value="{{ $stat->id_estado }}" name="estado_id" id="estado_id" readonly >
-                                            <label for="estado_id">{{ $stat->nombre }}</label>
+                                        <div class="option" >
+                                            <option value="{{$stat->id_estado}}" required>{{$stat->nombre}}</option>
                                         </div>
                                     @endforeach
+                                    <input class="inputvalue" type="text" value="" name="estado_id" id="estado_id" hidden>
                                 </x-slot>
-
-                                <x-slot name="footer">
-                                    seleccione el estado
+                                <x-slot name="selected">
+                                    Seleccione un estado
                                 </x-slot>
                             </x-select-box>
                         </div>
@@ -58,6 +56,8 @@
                                 {{__('Formulario contacto')}}
                             </h6>
                         </div>
+
+
                         <div class="col-span-6 sm:col-span-3">
                             <x-jet-label for="celular" value="{{ __('Celular') }}" />
                             <x-jet-input id="celular" name="celular" type="text" class="mt-1 block w-full"  autocomplete="celular" required />
@@ -80,17 +80,6 @@
                         </div>
 
 
-
-
-                        <!-- <div class="col-span-6 sm:col-span-4">
-                            <x-jet-label for="estado_id" value="{{ __('Estado, aqui deberia haber un select') }}" />
-                            <select name="" id="" class="form-select">
-                                <option value="selected" class="dropdown-item"> -- Elija el estado -- </option>
-                                //@foreach($estados as $estado)
-                                    <option value="{{ $estado->id }}">{{$estado->nombre}}</option>
-                                //@endforeach
-                            </select>
-                        </div> -->
 
                     <!-- TODO: Seria bueno agregar un boton ' agregar contacto' que al presionarlo se desplegue un formulario en el que se pueda añadir los datos de contacto.-->
 

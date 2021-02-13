@@ -19,18 +19,48 @@
 
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{route('rubros.index')}}" :active="request()->routeIs('rubros.index')">
-                        {{__('Rubros')}}
+                        {{__('Gestionar Rubros')}}
                     </x-jet-nav-link>
                 </div>
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                     <x-jet-nav-link href="{{route('categorias.index')}}" :active="request()->routeIs('categorias.index')">
-                        {{__('Categorias')}}
+                        {{__('Gestionar Categorias')}}
                     </x-jet-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-jet-nav-link href="{{route('estados.index')}}" :active="request()->routeIs('estados.index')">
-                        {{__('Estados')}}
-                    </x-jet-nav-link>
+                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" >
+                    <x-jet-dropdown align="right" width="40">
+                        <x-slot name="trigger">
+                            <div class="">
+                                <x-jet-nav-link href="#" >
+                                    {{__('Traslados')}}
+                                </x-jet-nav-link>
+                            </div>
+                        </x-slot>
+
+                        <x-slot name="content">
+                            <!-- Account Management -->
+                            <div class="block px-4 py-2 text-xs text-gray-400">
+                                {{ __('Traslados') }}
+                            </div>
+
+                            <x-jet-dropdown-link href="{{ route('ciudades.index') }}">
+                                {{ __('Gestionar Ciudades') }}
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{route('edificios.index')}}">
+                                {{ __('Gestionar Edificios') }}
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{route('departamentos.index')}}">
+                                {{ __('Gestionar Departamentos') }}
+                            </x-jet-dropdown-link>
+
+                            <x-jet-dropdown-link href="{{route('movimientos.index')}}">
+                                {{ __('Gestionar Movimientos') }}
+                            </x-jet-dropdown-link>
+
+                        </x-slot>
+                    </x-jet-dropdown>
                 </div>
                 <!-- Dropdown activos fijos-->
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex" >

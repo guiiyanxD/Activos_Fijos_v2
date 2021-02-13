@@ -46,15 +46,15 @@ class ProveedorController extends Controller
         $contact->telefono = $request->input('telefono');
         $contact->direccion = $request->input('direccion');
         $contact->email_personal = $request->input('email_personal');
-        //$contact->save();
+        $contact->save();
 
         $prov->nombre = $request->input('nombre');
         $prov->estado_id = $request->input('estado_id');
         $prov->contacto_id = $contact->id_contacto;
-        //$prov->save();
-        return dd($request);
-        //return redirect()->route('proveedores.index');
-
+        $prov->save();
+        //return dd($request);
+        return redirect()->route('proveedores.index');
+        //TODO: El estado_id siempre envia siempre 'No activo'
     }
 
     /**
@@ -67,7 +67,8 @@ class ProveedorController extends Controller
     {
         //$proveedor = Proveedor::with('estado')->with('contacto')->get()->where('id_proveedor','=',$id);
         $proveedor = Proveedor::findOrFail($id);
-        return view('proveedores.show',['proveedor'=>$proveedor]);
+        $estados = Estado::all();
+        return view('proveedores.show',['proveedor'=>$proveedor,'estados'=>$estados]);
         //return dd($prov->estado->nombre);
     }
 

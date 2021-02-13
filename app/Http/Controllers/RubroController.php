@@ -15,7 +15,7 @@ class RubroController extends Controller
     public function index()
     {
         //$rubro = Rubro::orderBy('id_rubro','ASC')->paginate(10);
-        $rubro = Rubro::all()->sortBy('id_rubro');
+        $rubro = Rubro::paginate(5);
         return view('Rubro.index',['rubro'=>$rubro]);
     }
     /**
@@ -39,8 +39,8 @@ class RubroController extends Controller
         $rubro = new Rubro();
         $rubro->nombre = $request->input('nombre');
         $rubro->descripcion = $request->input('descripcion');
-        $rubro->depreciar = $request->input('depreciar');
-        $rubro->actualiza = $request->input('actualiza');
+        $rubro->vida_util = $request->input('vida_util');
+        $rubro->coeficiente_depr = $request->input('coeficiente_depr');
         $rubro->save();
         return redirect()->route('rubros.index');
         //return dd($request->input('nombre'));
@@ -82,8 +82,8 @@ class RubroController extends Controller
         $rubro = Rubro::findOrFail($id);
         $rubro->nombre = $request->input('nombre');
         $rubro->descripcion = $request->input('descripcion');
-        $rubro->depreciar = $request->input('depreciar');
-        $rubro->actualiza = $request->input('actualiza');
+        $rubro->vida_util = $request->input('vida_util');
+        $rubro->coeficiente_depr = $request->input('coeficiente_depr');
         $rubro->save();
         return redirect()->route('rubros.index')->with('Exito', 'Rubro actualizado con exito.');
     }

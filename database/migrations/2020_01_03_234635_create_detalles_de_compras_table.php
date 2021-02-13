@@ -21,8 +21,8 @@ class CreateDetallesDeComprasTable extends Migration
             $table->unsignedBigInteger('cantidad');
             $table->unsignedFloat('costo');
 
-            $table->foreign('categoria_id')->references('id_categoria')->on('categorias');
-            $table->foreign('sol_compra_id')->references('id_sol_compra')->on('solicitudes_compras');
+            $table->foreign('categoria_id')->references('id_categoria')->on('categorias')->cascadeOnDelete()->cascadeOnUpdate();
+            $table->foreign('sol_compra_id')->references('id_sol_compra')->on('solicitudes_compras')->cascadeOnDelete()->cascadeOnUpdate();
             $table->timestamps();
 
         });

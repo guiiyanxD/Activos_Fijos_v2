@@ -19,15 +19,28 @@
             <div class="shadow overflow-hidden sm:rounded-md">
                 <div class="px-4 py-5 bg-white sm:p-6">
                     <div class="grid grid-cols-6 gap-6">
-                        <div class="col-span-6 sm:col-span-3">
+                        <div class="col-span-6 sm:col-span-4">
                             <x-jet-label for="nombre" value="{{ __('Nombre del rubro') }}" />
                             <input value="{{$proveedor->nombre}}" type="text" id="input" name="nombre" class="form-control" disabled="" autocomplete="nombre" required>
                             <x-jet-input-error for="nombre" class="mt-2" />
                         </div>
-                        <div class="col-span-6 sm:col-span-3">
-                            <x-jet-label for="estado_id" value="{{ __('Estado: '. $proveedor->estado->nombre) }}" />
-                            <input value="{{$proveedor->estado->id_estado}}" id="input" name="estado_id" type="number" disabled="" class="mt-1 block w-full"  required />
-                            <x-jet-input-error for="estado_id" class="mt-2" />
+                        <div class="col-span-8 sm:col-span-4">
+                            <x-select-box>
+                                <x-slot name="label">
+                                    escoja la opcion con componentes
+                                </x-slot>
+                                <x-slot name="main">
+                                    @foreach($estados as $stat)
+                                        <div class="option" >
+                                            <option value="{{$stat->id_estado}}" required>{{$stat->nombre}}</option>
+                                        </div>
+                                    @endforeach
+                                    <input class="inputvalue" type="text" value="" name="estado_id" id="estado_id" hidden>
+                                </x-slot>
+                                <x-slot name="selected">
+                                    Seleccione un estado
+                                </x-slot>
+                            </x-select-box>
                         </div>
 
                         <div class="divider col-span-6 sm:col-span-6"></div>

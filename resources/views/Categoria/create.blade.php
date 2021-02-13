@@ -34,18 +34,23 @@
                         </div>
                         <div class="col-span-6 sm:col-span-4">
                             <x-jet-label for="rubro_id" value="{{ __('Escoja el rubro a la que la cateogria pertenecerá') }}" />
-                            <x-jet-input id="rubro_id" name="rubro_id" type="number" class="mt-1 block w-full"  autocomplete="rubro_id" required />
+                            <select name="rubro_id" id="rubro_id">
+                                <option Selected> -- Escoja un rubro -- </option>
+                                @foreach($rubro as $rbr)
+                                    <option value="{{$rbr->id_rubro}}">{{$rbr->nombre}}</option>
+                                @endforeach
+                            </select>
                             <x-jet-input-error for="rubro_id" class="mt-2" />
                         </div>
                         <div class="col-span-6 sm:col-span-4">
-                            <x-jet-label for="vida_util" value="{{ __('Vida Util') }}" />
-                            <x-jet-input id="vida_util" name="vida_util" type="number" class="mt-1 block w-full"  autocomplete="vida_util" required />
-                            <x-jet-input-error for="vida_util" class="mt-2" />
+                            <x-jet-label for="depreciar" value="{{ __('Depreciar') }}" />
+                            <x-jet-input id="depreciar" name="depreciar" type="number" class="mt-1 block w-full"  autocomplete="depreciar" required />
+                            <x-jet-input-error for="depreciar" class="mt-2" />
                         </div>
                         <div class="col-span-6 sm:col-span-4">
-                            <x-jet-label for="coeficiente" value="{{ __('Coeficiente de depreacion') }}" />
-                            <x-jet-input id="coeficiente" name="coeficiente" type="number" class="mt-1 block w-full"  autocomplete="coeficiente" required />
-                            <x-jet-input-error for="coeficiente" class="mt-2" />
+                            <x-jet-label for="actualiza" value="{{ __('Actualiza') }}" />
+                            <x-jet-input id="actualiza" name="actualiza" type="number" class="mt-1 block w-full"  autocomplete="actualiza" required />
+                            <x-jet-input-error for="actualiza" class="mt-2" />
                         </div>
 
                         <div class="col-span-6 sm:col-span-4">

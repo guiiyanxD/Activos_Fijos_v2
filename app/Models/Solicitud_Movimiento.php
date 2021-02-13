@@ -11,18 +11,15 @@ class Solicitud_Movimiento extends Model
     protected $table = 'solicitudes_movimientos';
     protected $primaryKey='id_sol_mov';
     protected $fillable = [
-        'destino_dpto','origen_dpto','af_id','cantidad','solicitud_id',
+        'solicitud_id',
     ];
 
-    public function activo(){
-        return $this->belongsTo(Activo_Fijo::class,'af_id');
-    }
-
-    public function departamento(){
-        return $this->belongsTo(Departamento::class,'destino_dpto');
-    }
 
     public function solicitud(){
         return $this->belongsTo(Solicitud::class,'solicitud_id');
+    }
+
+    public function detalle_movimiento(){
+        return $this->hasOne(Detalle_Movimiento::class,'solicitud_mov_id');
     }
 }

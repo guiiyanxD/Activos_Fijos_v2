@@ -88,16 +88,17 @@
     </div>
     <div class="selected">
         <h7 class="font-semibold text-xl text-gray-50 leading-tight">
-            {{$footer}}
+            {{$selected}}
         </h7>
     </div>
 </div>
 
 <script>
+
     const selected = document.querySelector(".selected");
     const optionsContainer = document.querySelector(".options-container");
-
     const optionsList = document.querySelectorAll(".option");
+    const inputValue = document.querySelector(".inputvalue");
 
     selected.addEventListener("click", () => {
         optionsContainer.classList.toggle("active");
@@ -105,8 +106,12 @@
 
     optionsList.forEach(o => {
         o.addEventListener("click", () => {
-            selected.innerHTML = o.querySelector("label").innerHTML;
+            selected.innerHTML = o.querySelector("option").innerHTML;
+            console.log(o.querySelector("option").value);
+            inputValue.value = o.querySelector("option").value;
             optionsContainer.classList.remove("active");
         });
     });
+
+
 </script>

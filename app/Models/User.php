@@ -11,7 +11,7 @@ use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Jetstream\HasTeams;
 use Laravel\Sanctum\HasApiTokens;
 
-class User extends Authenticatable
+class User extends Authenticatable implements MustVerifyEmail
 {
     use HasApiTokens;
     use HasFactory;
@@ -88,4 +88,9 @@ class User extends Authenticatable
     public function solicitud(){
         return $this->hasMany(Solicitud::class,'user_id');
     }
+
+    public function bitacora(){
+        return $this->hasMany(Bitacora::class,'user_id');
+    }
+
 }

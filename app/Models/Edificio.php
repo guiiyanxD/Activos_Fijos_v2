@@ -4,12 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use mysql_xdevapi\Table;
 
 class Edificio extends Model
 {
     use HasFactory;
-    protected $table='edificio';
+    protected $table='edificios';
     protected $primaryKey='id_edificio';
     protected $fillable=[
         'nombre','direccion','ciudad_id',

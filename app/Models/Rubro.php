@@ -13,8 +13,8 @@ class Rubro extends Model
     protected $fillable = [
         'nombre',
         'descripcion',
-        'depreciar',
-        'actualiza',
+        'vida_util',
+        'coeficiente_depr',
     ];
 
     public function categoria(){

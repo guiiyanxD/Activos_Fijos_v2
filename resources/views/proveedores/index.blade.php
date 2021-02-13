@@ -59,4 +59,9 @@
             </tbody>
         </table>
     </div>
+   <!-- <div>
+        <x-slot name="footer">
+            this is the footer
+        </x-slot>
+    </div> -->
 </x-app-layout>

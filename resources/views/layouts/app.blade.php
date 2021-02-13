@@ -15,7 +15,24 @@
         <link rel="stylesheet" href="{{ asset('materialize/css/materialize.css') }}">
 
         @livewireStyles
+        <style>
+            main, header{
+                background-image: url('{{ asset('/backgrounds/fondo.jpg') }}');
+                background-repeat: initial;
+                background-attachment: fixed;
+                background-size: cover;
+                -webkit-background-size: cover;
+                opacity: 0.9;
+            }
+            main{
+                height: 100vh;
+            }
 
+            select {
+                display: block;
+                opacity: 1;
+            }
+        </style>
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ asset('materialize/js/materialize.js') }}" ></script>
@@ -24,13 +41,15 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-100">
+        <div class="min-h-screen bg-gray-200">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
-            <header class="bg-white shadow">
+            <header class="bg-opacity-50 shadow">
                 <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
+                    <div class="divider" style="width: 100%;">
+                    </div>
                 </div>
             </header>
 
@@ -38,6 +57,9 @@
             <main>
                 {{ $slot }}
             </main>
+            <!-- <footer>
+
+            </footer> -->
         </div>
 
         @stack('modals')

@@ -17,6 +17,7 @@ class CreateSolicitudesTable extends Migration
             $table->id('id_solicitud');
             $table->dateTime('fecha');
             $table->unsignedBigInteger('user_id');
+            $table->smallInteger('tipo');
          //   $table->foreignId('sol_compra_id');
        //     $table->foreignId('sol_mov_id');
 

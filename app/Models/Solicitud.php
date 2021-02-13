@@ -11,7 +11,7 @@ class Solicitud extends Model
     protected $table = 'solicitudes';
     protected $primaryKey= 'id_solicitud';
     protected $fillable = [
-        'fecha', 'user_id',
+        'fecha', 'user_id','tipo',
     ];
 
     public function activo(){
@@ -21,11 +21,10 @@ class Solicitud extends Model
     public function user(){
         return $this->belongsTo(User::class,'user_id');
     }
-
-    public function Solicitud_movimiento(){
+    public function solicitud_movimiento(){
         return $this->hasOne(Solicitud_Movimiento::class,'solicitud_id');
     }
-    public function Solicitud_compra(){
+    public function solicitud_compra(){
         return $this->hasOne(Solicitud_Compra::class,'solicitud_id');
     }
 

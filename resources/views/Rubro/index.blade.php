@@ -16,42 +16,47 @@
             </a>
             <li class="divider" style="margin: 10px"></li>
         </div>
-        <table class="table">
-            <thead>
-            <tr>
-                <th>Nombre</th>
-                <th>Descripcion</th>
-                <th colspan="2">&nbsp</th>
-                <th>Acciones</th>
-                <th colspan="2">&nbsp</th>
-            </tr>
-            </thead>
-            <tbody>
-            @foreach($rubro as $ru)
+        <div>
+            <table class="table">
+                <thead>
                 <tr>
-                    <td>{{$ru->nombre}}</td>
-                    <td>{{$ru->descripcion}}</td>
-                    <td colspan="2">&nbsp</td>
-                    <td>
-                        <a href="{{route('rubros.show',[$ru->id_rubro])}}" class="inline-flex items-center px-4 py-2 bg-green-400
+                    <th>#</th>
+                    <th>Nombre</th>
+                    <th>Descripcion</th>
+                    <th colspan="2">&nbsp</th>
+                    <th>Acciones</th>
+                    <th colspan="2">&nbsp</th>
+                </tr>
+                </thead>
+                <tbody>
+                @foreach($rubro as $ru)
+                    <tr>
+                        <td>{{$ru->id_rubro}}</td>
+                        <td>{{$ru->nombre}}</td>
+                        <td>{{$ru->descripcion}}</td>
+                        <td colspan="2">&nbsp</td>
+                        <td>
+                            <a href="{{route('rubros.show',[$ru->id_rubro])}}" class="inline-flex items-center px-4 py-2 bg-green-400
                 border border-gray-300 rounded-md font-semibold text-xs text-gray-50 uppercase tracking-widest shadow-sm
                 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800
                 active:bg-gray-50 transition ease-in-out duration-150" >
-                            Ver
-                        </a>
-                    </td>
-                    <td>
-                        <form method="POST" action="{{route('rubros.destroy',[$ru->id_rubro]) }}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="inline-flex items-center justify-center px-4 py-2 bg-red-600 border
+                                Ver
+                            </a>
+                        </td>
+                        <td>
+                            <form method="POST" action="{{route('rubros.destroy',[$ru->id_rubro]) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="inline-flex items-center justify-center px-4 py-2 bg-red-600 border
                     border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-red-500
                     focus:outline-none focus:border-red-700 focus:shadow-outline-red active:bg-red-600 transition ease-in-out duration-150">Eliminar</button>
-                        </form>
-                    </td>
-                </tr>
-            @endforeach
-            </tbody>
-        </table>
+                            </form>
+                        </td>
+                    </tr>
+                @endforeach
+                </tbody>
+            </table>
+            <span>{{$rubro->onEachSide(2)->links()}}</span>
+        </div>
     </div>
 </x-app-layout>

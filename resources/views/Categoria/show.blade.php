@@ -39,15 +39,15 @@
 
                             </div>
                             <div class="flex flex-col mb-4 md:w-1/2">
-                                <x-jet-label for="vida_util" value="{{ __('Vida util') }}" />
-                                <input value="{{$cat->vida_util}}" type="text" id="input" name="vida_util" class="form-control" disabled="" autocomplete="vida_util" required>
+                                <x-jet-label for="vida_util" value="{{ __('Depreciar') }}" />
+                                <input value="{{$cat->depreciar}}" type="text" id="input" name="vida_util" class="form-control" disabled="" autocomplete="vida_util" required>
                                 <x-jet-input-error for="vida_util" class="mt-2" />
 
                             </div>
 
                             <div  class="flex flex-col mb-4 md:w-1/2">
-                                <x-jet-label for="coeficiente" value="{{ __('Coeficiente') }}" />
-                                <input value="{{$cat->coeficiente_depr}}" type="text" id="input" name="coeficiente" class="form-control" disabled="" autocomplete="coeficiente" required>
+                                <x-jet-label for="coeficiente" value="{{ __('Actualiza') }}" />
+                                <input value="{{$cat->actualiza}}" type="text" id="input" name="coeficiente" class="form-control" disabled="" autocomplete="coeficiente" required>
                                 <x-jet-input-error for="coeficiente" class="mt-2" />
                             </div>
                         </div>

@@ -34,16 +34,16 @@
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
-                                <x-jet-label for="dpreciar" value="{{ __('Depreciar') }}" />
-                                <x-jet-input id="depreciar" name="depreciar" type="number" class="mt-1 block w-full"  autocomplete="depreciar" required />
-                                <x-jet-input-error for="depreciar" class="mt-2" />
+                                <x-jet-label for="vida_util" value="{{ __(' Vida Util') }}" />
+                                <x-jet-input id="vida_util" name="vida_util" type="number" class="mt-1 block w-full"  autocomplete="vida_util" required />
+                                <x-jet-input-error for="vida_util" class="mt-2" />
 
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
-                                <x-jet-label for="actualiza" value="{{ __('Actualiza') }}" />
-                                <x-jet-input id="actualiza" name="actualiza" type="number" class="mt-1 block w-full"  autocomplete="actualiza" required />
-                                <x-jet-input-error for="actualiza" class="mt-2" />
+                                <x-jet-label for="coeficiente_depr" value="{{ __('Coeficiente de depreciacion') }}" />
+                                <x-jet-input id="coeficiente_depr" name="coeficiente_depr" type="number" class="mt-1 block w-full"  autocomplete="coeficiente_depr" required />
+                                <x-jet-input-error for="coeficiente_depr" class="mt-2" />
                             </div>
 
                             <div class="col-span-6 sm:col-span-4">
