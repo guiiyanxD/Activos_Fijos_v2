@@ -6,6 +6,11 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+        @if(session('success'))
+            <div class="alert alert-dark" role="success">
+                {{session('success')}}
+            </div>
+        @endif
         <div >
             <a type="button" href="{{route('estados.create')}}"
                class="inline-flex items-center px-4 py-2 bg-indigo-500 border
@@ -19,6 +24,7 @@
         <table class="table">
             <thead>
             <tr>
+                <th>#</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th colspan="2">&nbsp</th>
@@ -28,6 +34,7 @@
             <tbody>
             @foreach($status as $stat)
                 <tr>
+                    <td>{{$stat->id_estado}}</td>
                     <td>{{$stat->nombre}}</td>
                     <td>{{$stat->descripcion}}</td>
                     <td colspan="2">&nbsp</td>
@@ -53,5 +60,6 @@
             @endforeach
             </tbody>
         </table>
+            <span>{{$status->links()}}</span>
     </div>
 </x-app-layout>

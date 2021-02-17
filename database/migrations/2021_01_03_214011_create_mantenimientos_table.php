@@ -17,14 +17,14 @@ class CreateMantenimientosTable extends Migration
             $table->id('id_mantenimiento');
             $table->timestamps();
             $table->string('problema');
-            $table->string('solucion');
-            $table->dateTime('fecha_inicio');
-            $table->dateTime('fecha_fin');
-            $table->unsignedBigInteger('duracion');
-            $table->unsignedBigInteger('costo');
+            $table->string('solucion')->nullable();
+            $table->date('fecha_inicio');
+            $table->date('fecha_fin')->nullable();
+            $table->unsignedBigInteger('duracion')->nullable();
+            $table->unsignedBigInteger('costo')->nullable();
             $table->unsignedBigInteger('revision_id');
 
-            $table->foreign('revision_id')->references('id_revision')->on('revisiones_tecnicas')->onDelete('cascade');
+            $table->foreign('revision_id')->references('id_revision')->on('revisiones_tecnicas')->cascadeOnDelete()->cascadeOnUpdate();
         });
     }
 

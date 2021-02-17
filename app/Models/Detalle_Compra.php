@@ -11,7 +11,7 @@ class Detalle_Compra extends Model
     protected $table = 'detalles_de_compras';
     protected $primaryKey='id_det_compra';
     protected $fillable = [
-        'detalle','categoria_id','sol_compra_id','cantidad','costo',
+        'detalle','categoria_id','sol_compra_id','cantidad','costo','total1'
     ];
 
     public function categoria(){

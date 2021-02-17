@@ -5,93 +5,108 @@
             {{__('Dashboard Administrativo')}}
         </h2>
     </x-slot>
-
+    <style>
+        p{
+            color: #000000;
+        }
+    </style>
     <div class="container">
         <div class="row">
             <div class="col s6 ">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
+                <div class="card bg-white shadow overflow-hidden sm:rounded-md">
+                    <div class="card-content orange-text">
                         <span class="card-title">Traslados</span>
 
                     </div>
                     <div class="card-action">
-                        <a href="#">Gestionar ciudades</a>
-                        <a href="#">Gestionar edificios</a>
-                        <a href="#">Gestionar departamentos</a>
-                        <a href="#">Gestionar movimiento</a>
+                        <a href="{{route('ciudades.index')}}">Gestionar ciudades</a>
+                        <a href="{{route('edificios.index')}}">Gestionar edificios</a>
+                        <a href="{{route('departamentos.index')}}">Gestionar departamentos</a>
+                        <a href="{{route('movimientos.index')}}">Gestionar movimiento</a>
                     </div>
                 </div>
             </div>
             <div class="col s6 ">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
+                <div class="card bg-white">
+                    <div class="card-content orange-text">
                         <span class="card-title">Altas</span>
                         <p>I am a very simple card. I am good at containing small bits of information.
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
+                        <a href="{{route('compras.index')}}">Gestionar Adquisiciones</a>
+                        <a href="{{route('proveedores.index')}}">Gestionar Proveedores</a>
+                        <a href="">Gestionar Almacenes</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col s6 ">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
+                <div class="card bg-white">
+                    <div class="card-content orange-text">
                         <span class="card-title">Bajas</span>
                         <p>I am a very simple card. I am good at containing small bits of information.
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
+                        <a href="{{route('revisiones_tecnicas.index')}}">Gestionar Revisiones Tecnicas</a>
+                        <a href="{{route('egresos.index')}}">Ver Egresos</a>
+                        <a href="{{route('mantenimientos.index')}}">Ver Mantenimientos</a>
                     </div>
                 </div>
             </div>
             <div class="col s6 ">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
+                <div class="card bg-white">
+                    <div class="card-content orange-text">
                         <span class="card-title">Activos fijos</span>
                         <p>I am a very simple card. I am good at containing small bits of information.
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
+                        <a href="{{route('rubros.index')}}">Gestionar Rubros</a>
+                        <a href="{{route('categorias.index')}}">Gestionar Categorias</a>
+                        <a href="">Gestionar Activos fijos</a>
+                        <a href="">Gestionar Codificacion</a>
                     </div>
                 </div>
             </div>
         </div>
         <div class="row">
             <div class="col s6 ">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
+                <div class="card bg-white">
+                    <div class="card-content orange-text">
                         <span class="card-title">Contabilizacion</span>
                         <p>I am a very simple card. I am good at containing small bits of information.
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
+                        <a href="#">Gestionar Revalo</a>
+                        <a href="#">Gestionar Depreciacion</a>
                     </div>
                 </div>
             </div>
             <div class="col s6 ">
-                <div class="card blue-grey darken-1">
-                    <div class="card-content white-text">
+                <div class="card bg-white">
+                    <div class="card-content orange-text">
                         <span class="card-title">Usuarios</span>
                         <p>I am a very simple card. I am good at containing small bits of information.
                             I am convenient because I require little markup to use effectively.</p>
                     </div>
                     <div class="card-action">
-                        <a href="#">This is a link</a>
-                        <a href="#">This is a link</a>
+                        <a href="{{route('usuarios.index')}}">Gestionar Usuarios</a>
+                        <a href="#">Gestionar Privilegios</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+        <x-slot name="footer">
+            <footer class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8 bg-blue-200" style="width: 100%">
+                <p class="font-bold font-sans text-black">Copyright ©2021 Activos Fijos Bolivia. Todos los derechos reservados</p>
+            </footer>
+
+        </x-slot>
 
 </x-app-layout>

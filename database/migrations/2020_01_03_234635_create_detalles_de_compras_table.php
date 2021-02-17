@@ -20,6 +20,7 @@ class CreateDetallesDeComprasTable extends Migration
             $table->string('detalle');
             $table->unsignedBigInteger('cantidad');
             $table->unsignedFloat('costo');
+            $table->unsignedFloat('total');
 
             $table->foreign('categoria_id')->references('id_categoria')->on('categorias')->cascadeOnDelete()->cascadeOnUpdate();
             $table->foreign('sol_compra_id')->references('id_sol_compra')->on('solicitudes_compras')->cascadeOnDelete()->cascadeOnUpdate();

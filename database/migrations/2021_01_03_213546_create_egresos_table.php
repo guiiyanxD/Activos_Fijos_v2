@@ -17,7 +17,7 @@ class CreateEgresosTable extends Migration
             $table->id('id_egreso');
             $table->unsignedBigInteger('revision_id');
             $table->timestamps();
-            $table->dateTime('fecha');
+            $table->date('fecha');
             $table->string('descripcion');
 
             $table->foreign('revision_id')->references('id_revision')->on('revisiones_tecnicas')->onDelete('cascade');

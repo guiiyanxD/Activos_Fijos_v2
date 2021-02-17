@@ -9,6 +9,7 @@ use App\Models\Solicitud;
 use App\Models\Solicitud_Compra;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use phpDocumentor\Reflection\Types\Self_;
 
 class SolicitudCompraController extends Controller
 {
@@ -20,7 +21,7 @@ class SolicitudCompraController extends Controller
      */
     public function index()
     {
-        $compras = Solicitud_Compra::all();
+        $compras = Solicitud_Compra::paginate(5);
         return view('solicitudes_compras.index',['compras'=>$compras]);
     }
 
@@ -49,6 +50,11 @@ class SolicitudCompraController extends Controller
 
     }
 
+    public function montoTotal($costo,$cantidad){
+        $total = $costo * $cantidad;
+        return $total;
+    }
+
     /**
      * Store a newly created resource in storage.
      *
@@ -75,9 +81,11 @@ class SolicitudCompraController extends Controller
         $detalle_compra->detalle = $request->input('detalle');
         $detalle_compra->cantidad = $request->input('cantidad');
         $detalle_compra->costo = $request->input('costo');
+        $detalle_compra->total = self::montoTotal($request->input('costo'),$request->input('cantidad'));
         $detalle_compra->save();
+
         //return dd($solicitud,$sol_compra,$detalle_compra);
-        return redirect()->route('compras.index');
+        return redirect()->route('compras.index')->with('success','Solicitud de compra registrada correctamente');
 
     }
 

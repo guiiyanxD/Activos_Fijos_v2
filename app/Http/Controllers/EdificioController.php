@@ -15,7 +15,7 @@ class EdificioController extends Controller
      */
     public function index()
     {
-        $edificios = Edificio::all();
+        $edificios = Edificio::paginate(5);
         return view('edificios.index',['edificios'=>$edificios]);
     }
 
@@ -43,7 +43,7 @@ class EdificioController extends Controller
         $edif->direccion = $request->input('direccion');
         $edif->ciudad_id = $request->input('ciudad_id');
         $edif->save();
-        return redirect()->route('edificios.index');
+        return redirect()->route('edificios.index')->with('success','Categoria registrada correctamente');
         //return dd($edif);
 
     }

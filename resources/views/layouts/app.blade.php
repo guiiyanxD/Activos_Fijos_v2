@@ -18,7 +18,7 @@
         <style>
             main, header{
                 background-image: url('{{ asset('/backgrounds/fondo.jpg') }}');
-                background-repeat: initial;
+                background-repeat: repeat-y;
                 background-attachment: fixed;
                 background-size: cover;
                 -webkit-background-size: cover;
@@ -32,10 +32,16 @@
                 display: block;
                 opacity: 1;
             }
+            td, th {
+                text-align: center;
+            }
+
+
         </style>
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>
         <script src="{{ asset('materialize/js/materialize.js') }}" ></script>
+
     </head>
 
     <body class="font-sans antialiased">
@@ -57,14 +63,15 @@
             <main>
                 {{ $slot }}
             </main>
-            <!-- <footer>
 
-            </footer> -->
+
+
         </div>
 
         @stack('modals')
 
         @livewireScripts
-
+        {{$footer}}
     </body>
+
 </html>

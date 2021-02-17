@@ -16,7 +16,7 @@ class DepartamentoController extends Controller
      */
     public function index()
     {
-        $departamento = Departamento::all();
+        $departamento = Departamento::paginate(5);
         return view('departamentos.index',['departamento'=>$departamento]);
     }
 
@@ -31,7 +31,7 @@ class DepartamentoController extends Controller
         $ciudades =  Ciudad::all();
         return view('departamentos.create',[
             'edificios'=> $edificios,
-            'ciudades'=>$ciudades
+            'ciudades'=>$ciudades,
         ]);
     }
 
@@ -48,7 +48,7 @@ class DepartamentoController extends Controller
         $dpto->descripcion = $request->input('descripcion');
         $dpto->edificio_id = $request->input('edificio_id');
         $dpto->save();
-        return redirect()->route('departamentos.index');
+        return redirect()->route('departamentos.index')->with('success','Departamento registrado correctamente');
         //return dd($dpto);
 
     }

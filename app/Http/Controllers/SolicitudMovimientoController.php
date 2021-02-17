@@ -21,7 +21,7 @@ class SolicitudMovimientoController extends Controller
      */
     public function index()
     {
-        $movimientos = Solicitud_Movimiento::all();
+        $movimientos = Solicitud_Movimiento::paginate(5);
         return view('solicitudes_movimientos.index',['movimientos'=>$movimientos]);
     }
 
@@ -78,7 +78,7 @@ class SolicitudMovimientoController extends Controller
         $det_mov->cantidad = $request->input('cantidad');
         $det_mov->save();
 
-        return redirect()->route('movimientos.index');
+        return redirect()->route('movimientos.index')->with('success','Solicitud de movimiento registrada correctamente');
         //return dd($solicitud,$sol_mov,$det_mov);
 
 

@@ -18,9 +18,12 @@ class CreateRevisionesTecnicasTable extends Migration
             $table->dateTime('fecha');
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('AF_id');
+            $table->unsignedBigInteger('estado_id');
+            $table->unsignedTinyInteger('conclusion');
 
-            $table->foreign('AF_id')->references('id_AF')->on('activos_fijos')->onDelete('cascade');
-            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
+            $table->foreign('AF_id')->references('id_AF')->on('activos_fijos')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('user_id')->references('id')->on('users')->cascadeOnUpdate()->cascadeOnDelete();
+            $table->foreign('estado_id')->references('id_estado')->on('estados')->cascadeOnUpdate()->cascadeOnDelete();
             $table->timestamps();
 
         });

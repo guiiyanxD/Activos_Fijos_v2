@@ -17,7 +17,7 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        $proveedor= Proveedor::all();
+        $proveedor= Proveedor::paginate(5);
         return view('proveedores.index',['proveedor'=>$proveedor]);
     }
 
@@ -53,7 +53,7 @@ class ProveedorController extends Controller
         $prov->contacto_id = $contact->id_contacto;
         $prov->save();
         //return dd($request);
-        return redirect()->route('proveedores.index');
+        return redirect()->route('proveedores.index')->with('success','Proveedor registrado correctamente');
         //TODO: El estado_id siempre envia siempre 'No activo'
     }
 

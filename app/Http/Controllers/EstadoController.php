@@ -14,7 +14,7 @@ class EstadoController extends Controller
      */
     public function index()
     {
-        $status = Estado::all();
+        $status = Estado::paginate(5);
         return view('estados.index',['status'=>$status]);
     }
 
@@ -40,7 +40,7 @@ class EstadoController extends Controller
         $stat->nombre = $request->input('nombre');
         $stat->descripcion = $request->input('descripcion');
         $stat->save();
-        return redirect()->route('estados.index');
+        return redirect()->route('estados.index')->with('success','Estado registrada correctamente');
     }
 
     /**

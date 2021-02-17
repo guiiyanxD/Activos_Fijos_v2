@@ -31,4 +31,9 @@ class Estado extends Model
         return $this->hasOne(Proveedor::class,'estado_id');
     }
 
+    public function revision(){
+        return $this->hasOne(Revision_Tecnica::class,'estado_id');
+    }
+
+
 }

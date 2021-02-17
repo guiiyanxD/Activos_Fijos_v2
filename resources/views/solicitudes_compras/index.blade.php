@@ -7,6 +7,11 @@
 
 
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+        @if(session('success'))
+            <div class="alert alert-dark" role="success">
+                {{session('success')}}
+            </div>
+        @endif
         <div >
             <a type="button" href="{{route('compras.create')}}"
                class="inline-flex items-center px-4 py-2 bg-indigo-500 border
@@ -37,6 +42,7 @@
                     <td>{{$cmp->solicitud->user->name}}  {{$cmp->solicitud->user->apellido}} </td>
                     <td>{{$cmp->proveedor->nombre}} </td>
                     <td>{{$cmp->solicitud->fecha}}</td>
+{{-- {{$cmp->detalle_compra->total}} --}}
                     <td>
                         <a href="{{route('movimientos.show',[$cmp->id_sol_compra])}}" class="inline-flex items-center px-4 py-2 bg-green-400
                 border border-gray-300 rounded-md font-semibold text-xs text-gray-50 uppercase tracking-widest shadow-sm
@@ -59,5 +65,6 @@
             @endforeach
             </tbody>
         </table>
+            <span>{{$compras->links()}}</span>
     </div>
 </x-app-layout>

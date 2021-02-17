@@ -17,4 +17,8 @@ class Egreso extends Model
     public function revision(){
         return $this->belongsTo(Revision_Tecnica::class,'revision_id');
     }
+
+    protected $casts = [
+        'fecha' => 'date',
+    ];
 }

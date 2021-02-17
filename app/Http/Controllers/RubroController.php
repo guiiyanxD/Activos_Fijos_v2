@@ -42,7 +42,7 @@ class RubroController extends Controller
         $rubro->vida_util = $request->input('vida_util');
         $rubro->coeficiente_depr = $request->input('coeficiente_depr');
         $rubro->save();
-        return redirect()->route('rubros.index');
+        return redirect()->route('rubros.index')->with('success','Rubro registrado correctamente');
         //return dd($request->input('nombre'));
     }
 

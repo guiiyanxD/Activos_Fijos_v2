@@ -6,6 +6,11 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
+        @if(session('success'))
+            <div class="alert alert-dark" role="success">
+                {{session('success')}}
+            </div>
+        @endif
         <div >
             <a type="button" href="{{route('edificios.create')}}"
                class="inline-flex items-center px-4 py-2 bg-indigo-500 border
@@ -56,5 +61,6 @@
             @endforeach
             </tbody>
         </table>
+            <span>{{$edificios->links()}}</span>
     </div>
 </x-app-layout>

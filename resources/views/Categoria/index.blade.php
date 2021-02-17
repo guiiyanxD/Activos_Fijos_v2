@@ -24,6 +24,7 @@
         <table class="table">
             <thead>
             <tr>
+                <th>#</th>
                 <th>Nombre</th>
                 <th>Descripcion</th>
                 <th colspan="2">&nbsp</th>
@@ -35,6 +36,7 @@
             <tbody>
             @foreach($categoria as $cat)
                 <tr>
+                    <td>{{$cat->id_categoria}}</td>
                     <td>{{$cat->nombre}}</td>
                     <td>{{$cat->descripcion}}</td>
                     <td colspan="2">&nbsp</td>
@@ -60,5 +62,6 @@
             @endforeach
             </tbody>
         </table>
+            <span>{{$categoria->links()}}</span>
     </div>
 </x-app-layout>

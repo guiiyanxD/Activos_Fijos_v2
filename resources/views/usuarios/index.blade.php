@@ -68,6 +68,7 @@
                         @endforeach
                 </tbody>
             </table>
+            <span>{{$user->links()}}</span>
         </div>
         <div>
             <table class="table">
@@ -121,6 +122,7 @@
                         @endforeach
                 </tbody>
             </table>
+            <span>{{$user->links()}}</span>
         </div>
         <div>
             <table class="table">
@@ -174,6 +176,7 @@
                         @endforeach
                 </tbody>
             </table>
+            <span>{{$user->links()}}</span>
         </div>
     </div>
 </x-app-layout>

@@ -14,7 +14,7 @@ class CiudadController extends Controller
      */
     public function index()
     {
-        $cities = Ciudad::all();
+        $cities = Ciudad::paginate(5);
         return view('ciudades.index',['cities'=>$cities]);
     }
 
@@ -25,7 +25,7 @@ class CiudadController extends Controller
      */
     public function create()
     {
-        return view('ciudades.create');
+        return view('ciudades.create')->with('success','Ciudad registrada correctamente');
     }
 
     /**

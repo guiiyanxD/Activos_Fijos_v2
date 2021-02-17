@@ -6,7 +6,12 @@
     </x-slot>
 
     <div class="max-w-7xl mx-auto py-10 sm:px-6 lg:px-8">
-        <div >
+        @if(session('success'))
+            <div class="alert alert-dark" role="success">
+                {{session('success')}}
+            </div>
+        @endif
+        <div>
             <a type="button" href="{{route('rubros.create')}}"
             class="inline-flex items-center px-4 py-2 bg-indigo-500 border
             border-transparent rounded-md font-semibold text-xs text-white uppercase tracking-widest hover:bg-gray-700
@@ -56,7 +61,7 @@
                 @endforeach
                 </tbody>
             </table>
-            <span>{{$rubro->onEachSide(2)->links()}}</span>
+            <span>{{$rubro->links()}}</span>
         </div>
     </div>
 </x-app-layout>

@@ -11,7 +11,7 @@ class Revision_Tecnica extends Model
     protected $table='revisiones_tecnicas';
     protected $primaryKey='id_revision';
     protected $fillable=[
-        'fecha','user_id','AF_id',
+        'fecha','user_id','af_id','estado_id','conclusion'
     ];
 
     public function egreso(){
@@ -19,7 +19,7 @@ class Revision_Tecnica extends Model
     }
 
     public function mantenimiento(){
-        return $this->hasMany(Mantenimiento::class,'revision_id');
+        return $this->hasOne(Mantenimiento::class,'revision_id');
     }
 
     public function revaluo(){
@@ -32,5 +32,9 @@ class Revision_Tecnica extends Model
 
     public function activo(){
         return $this->belongsTo(Activo_Fijo::class,'AF_id');
+    }
+
+    public function estado(){
+        return $this->belongsTo(Estado::class,'estado_id');
     }
 }
