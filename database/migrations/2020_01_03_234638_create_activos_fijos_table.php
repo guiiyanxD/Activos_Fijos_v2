@@ -17,7 +17,7 @@ class CreateActivosFijosTable extends Migration
             $table->id('id_AF');
             $table->string('nombre');
             $table->dateTime('fecha_obtencion');
-            $table->unsignedInteger('valor_compra');
+            $table->unsignedFloat('valor_compra');
             $table->unsignedBigInteger('estado_id');
             $table->unsignedBigInteger('categoria_id');
             $table->unsignedBigInteger('departamento_id');

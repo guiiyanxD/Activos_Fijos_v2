@@ -16,9 +16,9 @@
 
         @livewireStyles
         <style>
-            main, header{
+            body{
                 background-image: url('{{ asset('/backgrounds/fondo.jpg') }}');
-                background-repeat: repeat-y;
+                background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
                 -webkit-background-size: cover;
@@ -35,7 +35,11 @@
             td, th {
                 text-align: center;
             }
-
+            nav.menu{
+                background: linear-gradient(to right, rgb(96, 165, 250),  rgb(255, 251, 235), rgb(251, 191, 36));
+                width: 100%;
+                height:64px;
+            }
 
         </style>
         <!-- Scripts -->
@@ -47,12 +51,12 @@
     <body class="font-sans antialiased">
         <x-jet-banner />
 
-        <div class="min-h-screen bg-gray-200">
+        <div class="min-h-screen">
             @livewire('navigation-menu')
 
             <!-- Page Heading -->
             <header class="bg-opacity-50 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
+                <div class="max-w-7xl  mx-auto py-6 px-4 sm:px-6 lg:px-8">
                     {{ $header }}
                     <div class="divider" style="width: 100%;">
                     </div>
@@ -65,13 +69,12 @@
             </main>
 
 
-
         </div>
 
         @stack('modals')
 
         @livewireScripts
-        {{$footer}}
+
     </body>
 
 </html>

@@ -15,7 +15,7 @@ class Revaluo extends Model
     ]; //TODO: preguntar si aqui corresponde que haya relacion con la clase ESTADO
 
     public function revision(){
-        return $this->belongsTo(Revision::class,'revision_id');
+        return $this->belongsTo(Revision_Tecnica::class,'revision_id');
     }
 
     public function activo(){
