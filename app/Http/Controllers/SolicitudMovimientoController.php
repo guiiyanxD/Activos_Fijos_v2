@@ -7,12 +7,14 @@ use App\Models\Departamento;
 use App\Models\Detalle_Movimiento;
 use App\Models\Solicitud;
 use App\Models\Solicitud_Movimiento;
+use App\Traits\HasBitacora;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 
 class SolicitudMovimientoController extends Controller
 {
 
+    use HasBitacora;
     public static $TipoSolicitud = 1;
 
     public function __construct()
@@ -84,6 +86,9 @@ class SolicitudMovimientoController extends Controller
         $det_mov->af_id = $request->input('af_id');
         $det_mov->cantidad = $request->input('cantidad');
         $det_mov->save();
+
+        $model = class_basename($sol_mov);
+        HasBitacora::Created($model,$sol_mov->id_sol_mov);
 
         return redirect()->route('movimientos.index')->with('success','Solicitud de movimiento registrada correctamente');
         //return dd($solicitud,$sol_mov,$det_mov);

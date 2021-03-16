@@ -17,7 +17,7 @@
         @livewireStyles
         <style>
             body{
-                background-image: url('{{ asset('/backgrounds/fondo.jpg') }}');
+                background-image: url('{{ asset('/backgrounds/fondooptimizado.jpg') }}');
                 background-repeat: no-repeat;
                 background-attachment: fixed;
                 background-size: cover;
@@ -40,7 +40,6 @@
                 width: 100%;
                 height:64px;
             }
-
         </style>
         <!-- Scripts -->
         <script src="{{ mix('js/app.js') }}" defer></script>

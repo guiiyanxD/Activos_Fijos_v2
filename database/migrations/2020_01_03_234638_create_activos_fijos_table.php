@@ -16,7 +16,7 @@ class CreateActivosFijosTable extends Migration
         Schema::create('activos_fijos', function (Blueprint $table) {
             $table->id('id_AF');
             $table->string('nombre');
-            $table->dateTime('fecha_obtencion');
+            $table->date('fecha_obtencion');
             $table->unsignedFloat('valor_compra');
             $table->unsignedBigInteger('estado_id');
             $table->unsignedBigInteger('categoria_id');

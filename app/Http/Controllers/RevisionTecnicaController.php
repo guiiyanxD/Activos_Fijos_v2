@@ -6,6 +6,7 @@ use App\Models\Activo_Fijo;
 use App\Models\Estado;
 use App\Models\Mantenimiento;
 use App\Models\Revision_Tecnica;
+use App\Traits\HasBitacora;
 use Carbon\Carbon;
 use DateTimeInterface;
 use Illuminate\Http\Request;
@@ -13,6 +14,8 @@ use phpDocumentor\Reflection\Types\Self_;
 
 class RevisionTecnicaController extends Controller
 {
+    use HasBitacora;
+
     public function __construct(){
         $this->middleware('can:revisiones_tecnicas.index')->only('index');
         $this->middleware('can:revisiones_tecnicas.create')->only('create');
@@ -56,7 +59,7 @@ class RevisionTecnicaController extends Controller
         $revision->user_id = auth()->user()->id;
         $revision->estado_id =  $request->input('estado_id');
         $revision->AF_id =  $request->input('activo_id');
-        $revision->conclusion =  false;
+        $revision->conclusion =  0;
         $revision->save();
 
 
@@ -65,6 +68,10 @@ class RevisionTecnicaController extends Controller
         $mantenimiento->problema = $request->input('problema');
         $mantenimiento->fecha_inicio =$request->input('fecha_inicio');
         $mantenimiento->save();
+
+        $modelo = class_basename($revision);
+        HasBitacora::Created($modelo,$revision->id_revision);
+
         //return dd($revision,$mantenimiento);
         return redirect()->route('revisiones_tecnicas.index');
     }
@@ -112,6 +119,10 @@ class RevisionTecnicaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $rev = Revision_Tecnica::findOrFail($id);
+        $modelo = class_basename($rev);
+        HasBitacora::Created($modelo,$rev->id_revision);
+        $rev->delete();
+        return redirect()->route('revisiones_tecnicas.index')->with('success','la revision tecnica se ha eliminado');
     }
 }

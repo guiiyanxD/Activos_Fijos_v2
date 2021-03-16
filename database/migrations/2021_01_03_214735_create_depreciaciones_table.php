@@ -16,7 +16,7 @@ class CreateDepreciacionesTable extends Migration
         Schema::create('depreciaciones', function (Blueprint $table) {
             $table->id('id_depreciacion');
             $table->timestamps();
-            $table->unsignedBigInteger('depreciacion_acumulada');
+            $table->unsignedDouble('depreciacion_acumulada');
             $table->string('descripcion');
             $table->date('fecha');
             $table->unsignedBigInteger('AF_id');

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\ActivoController;
+use App\Http\Controllers\AlmacenController;
+use App\Http\Controllers\BitacoraController;
 use App\Http\Controllers\CategoriaController;
 use App\Http\Controllers\CiudadController;
 use App\Http\Controllers\ContactoController;
@@ -11,6 +14,7 @@ use App\Http\Controllers\MantenimientoController;
 use App\Http\Controllers\ProveedorController;
 use App\Http\Controllers\RevaluoController;
 use App\Http\Controllers\RevisionTecnicaController;
+use App\Http\Controllers\RolController;
 use App\Http\Controllers\SolicitudCompraController;
 use App\Http\Controllers\SolicitudMovimientoController;
 use App\Http\Controllers\UsuarioController;
@@ -96,10 +100,15 @@ Route::middleware(['auth'])->group(function(){
     route::get('egresos/{id}/crear', [EgresoController::class,'crear'])->name('egresos.crear');
     route::resource('revisiones_tecnicas', RevisionTecnicaController::class);
     route::resource('revaluos', RevaluoController::class);
-    route::resource('roles', \App\Http\Controllers\RolController::class);
+    route::get('revaluos/crear/{activo}/{revision}/{monto}',[RevaluoController::class,'crear'])->name('revaluos.crear');
+    route::resource('roles', RolController::class);
     route::get('privilegios', function (){
         return view('privilegios.index');
     })->name('privilegios.index');
+    route::resource('activos_fijos', ActivoController::class);
+    route::resource('almacenes', AlmacenController::class);
+    route::resource('bitacoras', BitacoraController::class)->names(['only','show']);
+    route::get('/bitacoras/descargar/pdf', [BitacoraController::class,'Exportar2'])->name('bitacoras.descargar');
 });
 
 

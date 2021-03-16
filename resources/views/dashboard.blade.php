@@ -24,7 +24,7 @@
                                 <div class="md:2/3">
                                     <div class="text-sm font-medium">
                                         Acciones:
-                                        <a class="orange-text" href="#">Gestionar Activoa Fijos</a>
+                                        <a class="orange-text" href="{{route('activos_fijos.index')}}">Gestionar Activos Fijos</a>
                                         <a class="orange-text" href="#">Gestionar Codificaciones</a>
                                         <a class="orange-text" href="{{route('categorias.index')}}">Gestionar Categorias</a>
                                         <a class="orange-text" href="{{route('rubros.index')}}">Gestionar Rubros</a>
@@ -46,6 +46,7 @@
                                         Acciones:
                                         <a class="orange-text" href="{{route('usuarios.index')}}">Gestionar Usuarios</a>
                                         <a class="orange-text" href="{{route('privilegios.index')}}">Gestionar Privilegios</a>
+                                        <a class="orange-text" href="{{route('bitacoras.index')}}">Gestionar Bitacora</a>
                                     </div>
                                 </div>
                             </div>
