@@ -26,7 +26,7 @@ class EdificioController extends Controller
      */
     public function index()
     {
-        $edificios = Edificio::paginate(5);
+        $edificios = Edificio::paginate(10);
         return view('edificios.index',['edificios'=>$edificios]);
     }
 

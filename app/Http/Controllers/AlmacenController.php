@@ -25,7 +25,7 @@ class AlmacenController extends Controller
      */
     public function index()
     {
-        $almacenes = Almacen::paginate(5);
+        $almacenes = Almacen::paginate(10);
         return view('almacenes.index',['almacenes'=>$almacenes]);
     }
 

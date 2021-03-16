@@ -4,7 +4,9 @@ use App\Http\Controllers\ActivoController;
 use App\Http\Controllers\AlmacenController;
 use App\Http\Controllers\BitacoraController;
 use App\Http\Controllers\CategoriaController;
+use App\Http\Controllers\ChartController;
 use App\Http\Controllers\CiudadController;
+use App\Http\Controllers\CodificacionController;
 use App\Http\Controllers\ContactoController;
 use App\Http\Controllers\DepartamentoController;
 use App\Http\Controllers\EdificioController;
@@ -99,16 +101,27 @@ Route::middleware(['auth'])->group(function(){
     route::resource('egresos', EgresoController::class);
     route::get('egresos/{id}/crear', [EgresoController::class,'crear'])->name('egresos.crear');
     route::resource('revisiones_tecnicas', RevisionTecnicaController::class);
-    route::resource('revaluos', RevaluoController::class);
     route::get('revaluos/crear/{activo}/{revision}/{monto}',[RevaluoController::class,'crear'])->name('revaluos.crear');
+    route::post('revaluos/crear/guardar',[RevaluoController::class,'guardar'])->name('revaluos.guardar');
+    route::resource('revaluos', RevaluoController::class);
     route::resource('roles', RolController::class);
+
+    route::resource('depreciacion',\App\Http\Controllers\DepreciacionController::class);
+    route::post('solicitudes/depreciation/llenar',[\App\Http\Controllers\DepreciacionController::class,'llenar'])->name('depreciacion.llenar');
+
+    route::resource('codificacion', CodificacionController::class);
+    route::post('codificacion/llenarformulario',[CodificacionController::class,'llenar'])->name('codificacion.llenar');
+
     route::get('privilegios', function (){
         return view('privilegios.index');
     })->name('privilegios.index');
+
     route::resource('activos_fijos', ActivoController::class);
     route::resource('almacenes', AlmacenController::class);
     route::resource('bitacoras', BitacoraController::class)->names(['only','show']);
     route::get('/bitacoras/descargar/pdf', [BitacoraController::class,'Exportar2'])->name('bitacoras.descargar');
+
+    Route::get('/bar-chart',[ChartController::class,'barChart'])->name('estadisticas');
 });
 
 

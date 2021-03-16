@@ -30,7 +30,7 @@ class SolicitudMovimientoController extends Controller
      */
     public function index()
     {
-        $movimientos = Solicitud_Movimiento::paginate(5);
+        $movimientos = Solicitud_Movimiento::paginate(10);
         return view('solicitudes_movimientos.index',['movimientos'=>$movimientos]);
     }
 

@@ -24,7 +24,7 @@ class MantenimientoController extends Controller
      */
     public function index()
     {
-        $mantenimiento = Mantenimiento::paginate(5);
+        $mantenimiento = Mantenimiento::paginate(10);
         return view('mantenimientos.index',['mantenimientos'=>$mantenimiento]);
     }
 

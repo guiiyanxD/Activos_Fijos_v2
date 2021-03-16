@@ -30,7 +30,7 @@ class SolicitudCompraController extends Controller
      */
     public function index()
     {
-        $compras = Solicitud_Compra::paginate(5);
+        $compras = Solicitud_Compra::paginate(10);
         return view('solicitudes_compras.index',['compras'=>$compras]);
     }
 

@@ -28,7 +28,7 @@ class RevisionTecnicaController extends Controller
      */
     public function index()
     {
-        $revision = Revision_Tecnica::paginate(5);
+        $revision = Revision_Tecnica::paginate(10);
         return view('revisiones_tecnicas.index',['revisiones'=>$revision]);
     }
 

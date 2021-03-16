@@ -28,7 +28,7 @@ class ProveedorController extends Controller
      */
     public function index()
     {
-        $proveedor= Proveedor::paginate(5);
+        $proveedor= Proveedor::paginate(10);
         return view('proveedores.index',['proveedor'=>$proveedor]);
     }
 

@@ -24,10 +24,10 @@
                                 <div class="md:2/3">
                                     <div class="text-sm font-medium">
                                         Acciones:
-                                        <a class="orange-text" href="{{route('activos_fijos.index')}}">Gestionar Activos Fijos</a>
-                                        <a class="orange-text" href="#">Gestionar Codificaciones</a>
-                                        <a class="orange-text" href="{{route('categorias.index')}}">Gestionar Categorias</a>
-                                        <a class="orange-text" href="{{route('rubros.index')}}">Gestionar Rubros</a>
+                                        <a class="orange-text" target="_blank" href="{{route('activos_fijos.index')}}">Gestionar Activos Fijos</a>
+                                        <a class="orange-text" target="_blank" href="{{route('codificacion.index')}}">Gestionar Codificaciones</a>
+                                        <a class="orange-text" target="_blank" href="{{route('categorias.index')}}">Gestionar Categorias</a>
+                                        <a class="orange-text" target="_blank" href="{{route('rubros.index')}}">Gestionar Rubros</a>
                                     </div>
                                 </div>
                             </div>
@@ -44,9 +44,10 @@
                                 <div class="md:2/3">
                                     <div class="text-sm font-medium">
                                         Acciones:
-                                        <a class="orange-text" href="{{route('usuarios.index')}}">Gestionar Usuarios</a>
-                                        <a class="orange-text" href="{{route('privilegios.index')}}">Gestionar Privilegios</a>
-                                        <a class="orange-text" href="{{route('bitacoras.index')}}">Gestionar Bitacora</a>
+                                        <a class="orange-text" target="_blank" href="{{route('usuarios.index')}}">Gestionar Usuarios</a>
+                                        <a class="orange-text" target="_blank" href="{{route('privilegios.index')}}">Gestionar Privilegios</a>
+                                        <a class="orange-text" target="_blank" href="{{route('bitacoras.index')}}">Gestionar Bitacora</a>
+                                        <a class="orange-text" target="_blank" href="{{route('estadisticas')}}">Ver estadisticas</a>
                                     </div>
                                 </div>
                             </div>
@@ -64,9 +65,9 @@
                                 <div class="md:2/3">
                                     <div class="text-sm font-medium">
                                         Acciones:
-                                        <a class="orange-text" href="{{route('compras.index')}}">Gestionar Adquisiciones</a>
-                                        <a class="orange-text" href="{{route('proveedores.index')}}">Gestionar Proveedores</a>
-                                        <a class="orange-text" href="">Gestionar Almacenes</a>
+                                        <a class="orange-text" target="_blank" href="{{route('compras.index')}}">Gestionar Adquisiciones</a>
+                                        <a class="orange-text" target="_blank" href="{{route('proveedores.index')}}">Gestionar Proveedores</a>
+                                        <a class="orange-text" target="_blank" href="{{route('almacenes.index')}}">Gestionar Almacenes</a>
                                     </div>
                                 </div>
                             </div>
@@ -83,9 +84,9 @@
                                 <div class="md:2/3">
                                     <div class="text-sm font-medium">
                                         Acciones:
-                                        <a class="orange-text" href="{{route('revisiones_tecnicas.index')}}">Gestionar Revisiones Tecnicas</a>
-                                        <a class="orange-text" href="{{route('egresos.index')}}">Ver Egresos</a>
-                                        <a class="orange-text" href="{{route('mantenimientos.index')}}">Ver Mantenimientos</a>
+                                        <a class="orange-text" target="_blank" href="{{route('revisiones_tecnicas.index')}}">Gestionar Revisiones Tecnicas</a>
+                                        <a class="orange-text" target="_blank" href="{{route('egresos.index')}}">Ver Egresos</a>
+                                        <a class="orange-text" target="_blank" href="{{route('mantenimientos.index')}}">Ver Mantenimientos</a>
                                     </div>
                                 </div>
                             </div>
@@ -102,10 +103,10 @@
                                 <div class="2/3">
                                     <div class="text-sm font-medium">
                                         Accciones:
-                                        <a class="orange-text" href="{{route('ciudades.index')}}">Gestionar ciudades</a>
-                                        <a class="orange-text" href="{{route('edificios.index')}}">Gestionar edificios</a>
-                                        <a class="orange-text" href="{{route('departamentos.index')}}">Gestionar departamentos</a>
-                                        <a class="orange-text" href="{{route('movimientos.index')}}">Gestionar movimiento</a>
+                                        <a class="orange-text" target="_blank" href="{{route('ciudades.index')}}">Gestionar ciudades</a>
+                                        <a class="orange-text" target="_blank" href="{{route('edificios.index')}}">Gestionar edificios</a>
+                                        <a class="orange-text" target="_blank" href="{{route('departamentos.index')}}">Gestionar departamentos</a>
+                                        <a class="orange-text" target="_blank" href="{{route('movimientos.index')}}">Gestionar movimiento</a>
                                     </div>
                                 </div>
                             </div>
@@ -122,8 +123,8 @@
                                 <div class="md:2/3">
                                     <div class="text-sm font-medium">
                                         Acciones:
-                                        <a class="orange-text" href="#">Gestionar Revalo</a>
-                                        <a class="orange-text" href="#">Gestionar Depreciacion</a>
+                                        <a class="orange-text" target="_blank" href="{{route('revaluos.index')}}">Gestionar Revaluo</a>
+                                        <a class="orange-text" target="_blank" href="{{route('depreciacion.index')}}">Gestionar Depreciacion</a>
                                     </div>
                                 </div>
                             </div>

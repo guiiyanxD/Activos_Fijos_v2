@@ -26,7 +26,7 @@ class CiudadController extends Controller
      */
     public function index()
     {
-        $cities = Ciudad::Paginate(5);
+        $cities = Ciudad::Paginate(10);
         return view('ciudades.index',['cities'=>$cities]);
     }
 

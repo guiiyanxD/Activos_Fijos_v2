@@ -23,7 +23,7 @@ class EstadoController extends Controller
     }
     public function index()
     {
-        $status = Estado::paginate(5);
+        $status = Estado::paginate(10);
         return view('estados.index',['status'=>$status]);
     }
 

@@ -13,20 +13,11 @@
             </div>
             <div class="card-content ">
                 <div class="row">
-                    <div class="col s6">
+                    <div class="col s12">
                         <div class="card bg-indigo-500 rounded-full">
                             <div class="card-content">
                                 <div class="center-align">
                                     <a href="{{route('roles.index')}}" type="button">Administrar Roles </a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col s6">
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="center-align">
-                                    <a href="#" type="button">Administrar Permisos </a>
                                 </div>
                             </div>
                         </div>

@@ -24,7 +24,7 @@ class EgresoController extends Controller
      */
     public function index()
     {
-        $egreso = Egreso::paginate(5);
+        $egreso = Egreso::paginate(10);
         return view('egresos.index',['egresos'=>$egreso]);
     }
 
